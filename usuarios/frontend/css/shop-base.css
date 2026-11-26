@@ -1,0 +1,148 @@
+:root {
+  --preto: var(--bookshop-fundo, #11100e);
+  --preto-secundario: var(--bookshop-painel, #1a1917);
+  --dourado: var(--bookshop-amarelo, #c9a646);
+  --dourado-claro: var(--bookshop-amarelo-hover, #e0c56e);
+  --bege: var(--bookshop-amarelo-hover, #d5bf86);
+  --creme: var(--bookshop-texto, #f2e7cc);
+  --branco: var(--bookshop-texto, #f5f1e8);
+  --muted: var(--bookshop-texto-suave, #b8af9d);
+  --borda: var(--bookshop-borda, rgba(201, 166, 70, 0.4));
+  color-scheme: dark;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--preto);
+  color: var(--branco);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--preto);
+  line-height: 1.5;
+}
+
+.storefront-header,
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem clamp(1rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--borda);
+  background: var(--preto-secundario);
+}
+
+.storefront-header h1 {
+  margin: 0;
+  color: var(--dourado);
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.12em;
+}
+
+.storefront-header p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+nav {
+  border-bottom: 1px solid var(--borda);
+  background: var(--bookshop-fundo, #050505);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  flex: 1;
+}
+
+nav a {
+  display: block;
+  padding: 0.85rem 1rem;
+  color: var(--branco);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: var(--dourado);
+  color: var(--preto);
+}
+
+input {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 0.7rem;
+  border: 1px solid var(--borda);
+  border-radius: 0.35rem;
+  background: var(--bookshop-fundo, #0b0b0a);
+  color: var(--branco);
+  font: inherit;
+}
+
+button {
+  min-height: 2.7rem;
+  padding: 0.65rem 0.9rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: var(--dourado);
+  color: var(--preto);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+button:hover:not(:disabled) {
+  background: var(--dourado-claro);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--dourado-claro);
+  outline-offset: 2px;
+}
+
+footer {
+  padding: 1.5rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .storefront-header,
+  .cart-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+
+/* A navegação de ações do cabeçalho não deve herdar o fundo preto do menu principal. */
+nav.shop-actions {
+  border: 0;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+  isolation: isolate;
+}
+nav.shop-actions > * {
+  position: relative;
+  z-index: 1;
+}

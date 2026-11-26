@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookShop | Pedidos</title><link rel="stylesheet" href="../css/menu.css"><link rel="stylesheet" href="../css/livros.css"><link rel="stylesheet" href="../css/pedidos.css"><script src="./pedidos.js?v=confirmar-pagamento" defer></script>  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+  <link rel="stylesheet" href="/css/temas.css">
+  <script src="/js/tema.js" defer></script>
+</head>
+<body class="menu-page">
+<header class="site-header"><div class="header-content"><h1 class="site-title">PEDIDOS</h1><p class="site-subtitle">Cadastro e gerenciamento de pedidos</p></div></header>
+<nav id="menu-pedidos" class="manager-nav menu-nav" aria-label="Navegação principal"><ul class="menu-links">
+<li><a class="menu-link" href="../menu/index.html">MENU</a></li><li><a class="menu-link" href="../livros/livros.html">LIVROS</a></li>
+<li><a class="menu-link" href="../lancamentos/lancamentos.html">LANÇAMENTOS</a></li><li><a class="menu-link" href="../pessoas/pessoas.html">PESSOAS</a></li>
+<li><a class="menu-link" href="./pedidos.html">PEDIDOS</a></li><li><a class="menu-link" href="../cargos/cargos.html">CARGOS</a></li><li><a class="menu-link" href="/vitrine/index.html">VOLTAR À VITRINE</a></li></ul></nav>
+<main class="pedidos-main">
+<section>
+<h2 id="titulo-form">Novo pedido presencial</h2>
+<form id="pedido-form">
+  <fieldset class="form-grid">
+    <legend>Cliente</legend>
+    <label>Nome <input id="nome_cliente" required maxlength="150"></label>
+    <label>Telefone (opcional) <input id="telefone" type="tel" maxlength="30"></label>
+    <label><input id="pedido-presencial" type="checkbox" required checked> Pedido presencial</label>
+  </fieldset>
+  <fieldset class="form-grid">
+    <legend>Entrega</legend>
+    <label class="form-group-wide"><input id="entrega" type="checkbox"> Entregar neste endereço</label>
+    <div id="campos-entrega" class="form-group-wide form-grid" hidden>
+      <label>CEP <input id="cep" maxlength="9" inputmode="numeric" autocomplete="postal-code"></label>
+      <label>Rua <input id="rua" maxlength="200"></label>
+      <label>Número <input id="numero" maxlength="30"></label>
+      <label>Complemento <input id="complemento" maxlength="100"></label>
+      <label>Bairro <input id="bairro" maxlength="100"></label>
+      <label>Cidade <input id="cidade" maxlength="100"></label>
+      <label>Estado (UF) <input id="estado" maxlength="2"></label>
+      <label>Entrega prevista <input id="data_prevista_entrega" type="date"></label>
+    </div>
+  </fieldset>
+  <fieldset id="produtos-pedido">
+    <legend>Livros</legend>
+    <label>Pesquisar por título ou autor <input id="busca-livro" type="search"></label>
+    <div class="pedido-item-controls">
+      <select id="livro-pedido" aria-label="Livro"><option value="">Selecione um livro</option></select>
+      <input id="quantidade-livro-pedido" type="number" min="1" max="100" value="1" aria-label="Quantidade">
+      <button id="adicionar-livro-pedido" type="button">Adicionar livro</button>
+    </div>
+    <div id="itens-pedido-lista" aria-live="polite"></div>
+  </fieldset>
+  <fieldset id="pagamento-pedido" class="form-grid">
+    <legend>Pagamento</legend>
+    <label>Forma <select id="forma_pagamento_id" required><option value="">Carregando…</option></select></label>
+    <p>Situação inicial: pagamento simulado</p>
+    <p id="resumo-financeiro" class="form-group-wide" aria-live="polite"></p>
+  </fieldset>
+  <label class="pedido-observacao">Observação <textarea id="detalhes_pedido" rows="3" maxlength="5000"></textarea></label>
+  <div class="pedido-botoes">
+    <button id="salvar-pedido" type="submit">Cadastrar pedido</button>
+    <button id="limpar-pedido" type="button">Limpar formulário</button>
+  </div>
+</form>
+<p id="status" role="status" aria-live="polite"></p>
+</section>
+<section>
+<h2>Pedidos cadastrados</h2>
+<button id="avisos-pedidos" type="button" hidden>Avisos</button>
+<div id="origens-pedido" class="pedido-botoes" aria-label="Origem do pedido">
+  <button type="button" data-origem="todos" aria-pressed="false" hidden>Todos os pedidos</button>
+  <button type="button" data-origem="online" aria-pressed="false" hidden>Pedidos online</button>
+  <button type="button" data-origem="presencial" aria-pressed="true">Pedidos presenciais</button>
+</div>
+<p id="lista-status" role="status"></p>
+<div class="pedidos-tabela"><table><thead><tr>
+<th>ID</th><th>Cliente</th><th>Origem</th><th>Data</th><th>Total</th><th>Status</th><th>Ações</th>
+</tr></thead><tbody id="pedidos-body"></tbody></table></div>
+</section>
+<dialog id="pedido-dialog" aria-labelledby="pedido-dialog-titulo">
+  <header><h2 id="pedido-dialog-titulo">Detalhes do pedido</h2><form method="dialog"><button>Fechar</button></form></header>
+  <div id="pedido-dialog-corpo"></div>
+</dialog>
+<dialog id="avisos-dialog" class="avisos-dialog" aria-labelledby="avisos-titulo">
+  <header><h2 id="avisos-titulo">Solicitações de cancelamento</h2><form method="dialog"><button>Fechar</button></form></header>
+  <div id="avisos-lista" aria-live="polite"></div>
+</dialog>
+</main><footer class="site-footer academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer></body></html>

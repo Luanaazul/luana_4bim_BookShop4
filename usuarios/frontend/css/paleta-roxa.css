@@ -1,0 +1,57 @@
+﻿:root {
+  --bookshop-fundo: #252033;
+  --bookshop-painel: #342944;
+  --bookshop-cabecalho: #3b2e50;
+  --bookshop-campo: #281f38;
+  --bookshop-amarelo: #e5cd87;
+  --bookshop-amarelo-hover: #f1dda5;
+  --bookshop-texto: #f8f3fa;
+  --bookshop-texto-suave: #cfc3da;
+  --bookshop-borda: rgba(203, 178, 221, .38);
+}
+/* Keep featured areas distinct from the surrounding page. */
+.storefront-header,
+.cart-header,
+.site-header {
+  background: var(--bookshop-cabecalho);
+  color: var(--bookshop-texto);
+}
+.storefront-header .storefront-brand h1,
+.storefront-header .storefront-brand p,
+.storefront-header .account-link,
+.storefront-header .cart-link {
+  color: var(--bookshop-amarelo-hover);
+  border-color: var(--bookshop-borda);
+}
+nav.shop-actions { background: transparent; }
+.order-card,
+.order-dialog-header,
+#pedido-dialog {
+  background: var(--bookshop-painel);
+}
+
+
+.manager-nav {
+  --nav-amarelo: #c5a659;
+  --nav-amarelo-realce: #d2b66c;
+  --nav-roxo: #342044;
+  background: var(--nav-amarelo);
+}
+
+.manager-nav a {
+  background: var(--nav-amarelo);
+  color: var(--nav-roxo);
+  border-inline-color: #795939;
+}
+
+.manager-nav a:hover,
+.manager-nav a:focus-visible,
+.manager-nav a:active {
+  background: var(--nav-amarelo-realce);
+  color: var(--nav-roxo);
+}
+
+.manager-nav a:focus-visible {
+  outline: 2px solid var(--nav-roxo);
+  outline-offset: -4px;
+}

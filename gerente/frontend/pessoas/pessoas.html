@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookShop | Pessoas</title>
+
+    <link rel="stylesheet" href="../css/pessoas.css">
+  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+  <link rel="stylesheet" href="/css/temas.css">
+  <script src="/js/tema.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>BOOKSHOP</h1>
+        <p>Cadastro de Pessoas</p>
+    </header>
+
+        <nav class="manager-nav" aria-label="Navegação principal"><ul>
+        <li><a href="../menu/index.html">Menu</a></li>
+        <li><a href="../livros/livros.html">Livros</a></li>
+        <li><a href="../lancamentos/lancamentos.html">Lançamentos</a></li>
+        <li><a href="../pessoas/pessoas.html">Pessoas</a></li>
+        <li><a href="../pedidos/pedidos.html">Pedidos</a></li>
+        <li><a href="../cargos/cargos.html">Cargos</a></li>
+        <li><a href="/vitrine/index.html">Voltar à vitrine</a></li>
+    </ul></nav>
+
+    <main>
+      <section class="crud-card">
+        <h2>Pessoas cadastradas</h2>
+        <label for="pessoa-busca">Buscar por CPF ou nome</label>
+        <input id="pessoa-busca" type="search">
+        <p id="pessoas-list-status" role="status"></p>
+        <div class="table-container"><table>
+          <thead><tr><th>CPF</th><th>Nome</th><th>Nascimento</th><th>Usuário</th><th>E-mail</th><th>Endereço</th><th>Cadastro</th><th>Vínculo</th><th>Ações</th></tr></thead>
+          <tbody id="pessoas-tbody"></tbody>
+        </table></div>
+      </section>
+      <section class="crud-card">
+        <h2>Cadastrar nova pessoa</h2>
+        <form id="pessoa-form" class="form-grid">
+          <label>CPF <input name="cpf_pessoa" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required></label>
+          <label>Nome <input name="nome_pessoa" maxlength="100" required></label>
+          <label>Nascimento <input name="data_nascimento_pessoa" type="date" required></label>
+          <label>Usuário <input name="nome_usuario_pessoa" maxlength="50" required></label>
+          <label>E-mail <input name="email_pessoa" type="email" maxlength="150" required></label>
+          <label>Endereço (opcional) <input name="endereco_pessoa" maxlength="200"></label>
+          <label>Senha <input name="senha_pessoa" type="password" minlength="8" maxlength="72" autocomplete="new-password" required></label>
+          <label><input name="eh_funcionario" type="checkbox"> Cadastrar também como funcionário</label>
+          <fieldset id="novo-funcionario" hidden disabled>
+            <legend>Dados funcionais</legend>
+            <label>Cargo <select name="cargo_id_cargo" required></select></label>
+            <label>Salário <input name="salario_funcionario" type="number" min="0" max="99999999.99" step=".01" required></label>
+          </fieldset>
+          <div><button>Cadastrar</button></div>
+        </form>
+        <p id="pessoa-status" role="status"></p>
+      </section>
+      <dialog id="vinculo-dialog" aria-labelledby="vinculo-titulo">
+        <h2 id="vinculo-titulo">Vínculo de funcionário</h2>
+        <p id="vinculo-nome"></p>
+        <form id="vinculo-form">
+          <label>Cargo <select name="cargo_id_cargo" required></select></label>
+          <label>Salário <input name="salario_funcionario" type="number" min="0" max="99999999.99" step=".01" required></label>
+          <p id="vinculo-status" role="status"></p>
+          <button>Salvar vínculo</button>
+          <button type="button" id="vinculo-fechar">Fechar</button>
+        </form>
+      </dialog>
+    </main>
+    <footer class="academic-footer">
+
+        <p>Luana Cazarin de Almeida · Turma M32 · 2026</p>
+
+    </footer>
+
+
+    <script src="../js/pessoas.js"></script>
+
+</body>
+
+</html>

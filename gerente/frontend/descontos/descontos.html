@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BookShop | Descontos</title>
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/livros.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="../css/descontos.css">
+  <script src="./descontos.js?v=id-numerico" defer></script>
+  <link rel="stylesheet" href="/css/temas.css">
+  <script src="/js/tema.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-content"><h1>Gerenciamento de descontos</h1></div></header>
+  <nav class="manager-nav" aria-label="Navegação principal"><ul>
+    <li><a href="../menu/index.html">Menu</a></li><li><a href="../livros/livros.html">Livros</a></li>
+    <li><a href="../pedidos/pedidos.html">Pedidos</a></li><li><a href="./descontos.html" aria-current="page">Descontos</a></li>
+    <li><a href="/vitrine/index.html">Vitrine</a></li>
+  </ul></nav>
+  <main class="campanhas">
+    <section aria-labelledby="cadastrados">
+      <div class="campanhas-barra"><h2 id="cadastrados">Descontos cadastrados</h2><button id="nova" type="button">Novo desconto</button></div>
+      <div class="campanhas-barra">
+        <label>Pesquisar <input id="busca" type="search" placeholder="Nome da campanha"></label>
+        <label>Situação <select id="situacao"><option value="">Todas</option><option>Ativo</option><option>Programado</option><option>Expirado</option><option>Inativo</option></select></label>
+      </div>
+      <p id="resultado" role="status"></p>
+      <div class="campanhas-tabela"><table>
+        <thead><tr><th>ID</th><th>Nome</th><th>Tipo</th><th>Desconto</th><th>Início</th><th>Encerramento</th><th>Livros atingidos</th><th>Situação</th><th>Ações</th></tr></thead>
+        <tbody id="linhas"></tbody>
+      </table></div>
+    </section>
+    <dialog id="editor" aria-labelledby="editor-titulo">
+      <form id="form">
+        <h2 id="editor-titulo">Novo desconto</h2>
+        <fieldset><legend>Informações da campanha</legend>
+          <label>ID <input name="id_exibicao" type="number" min="1" max="2147483647" required></label>
+          <label>Nome <input name="nome" maxlength="120" required></label>
+          <label>Tipo <input name="tipo" maxlength="60" required placeholder="Ex.: sazonal"></label>
+          <label>Descrição <textarea name="descricao" maxlength="3000" rows="2"></textarea></label>
+        </fieldset>
+        <fieldset><legend>Percentual e validade</legend>
+          <label>Desconto (%) <input name="percentual" type="number" min="1" max="100" required></label>
+          <label>Início <input name="inicio" type="datetime-local" required></label>
+          <label>Encerramento <input name="termino" type="datetime-local"></label>
+          <label class="check"><input name="ativa" type="checkbox"> Habilitar no período informado</label>
+        </fieldset>
+        <fieldset id="criterios"><legend>Quais livros receberão este desconto?</legend>
+          <label class="check"><input name="todos" type="checkbox"> Todo o catálogo</label>
+          <div id="filtros">
+            <details><summary>Por gênero</summary><div id="generos"></div></details>
+            <details><summary>Por autor</summary><label>Pesquisar autores <input type="search" data-pesquisa="autores"></label><div id="autores"></div></details>
+            <details><summary>Por editora</summary><label>Pesquisar editoras <input type="search" data-pesquisa="editoras"></label><div id="editoras"></div></details>
+            <details><summary>Por livro específico</summary><label>Pesquisar livros <input type="search" data-pesquisa="livros"></label><div id="livros"></div></details>
+            <details><summary>Por preço</summary><div class="campanhas-barra">
+              <label>Mínimo (R$) <input name="minimo" type="number" min="0" step=".01"></label>
+              <label class="check"><input name="minimo_exclusivo" type="checkbox"> Acima do mínimo</label>
+              <label>Máximo (R$) <input name="maximo" type="number" min="0" step=".01"></label>
+              <label class="check"><input name="maximo_exclusivo" type="checkbox"> Abaixo do máximo</label>
+            </div></details>
+            <label>Combinação de critérios <select name="combinacao"><option value="E">E — atende a todos</option><option value="OU">OU — atende a pelo menos um</option></select></label>
+            <p>Marcar dois gêneros aceita qualquer um deles. Com E, o livro ainda precisa atender aos demais filtros escolhidos.</p>
+          </div>
+        </fieldset>
+        <fieldset><legend>Compatibilidade</legend>
+          <label class="check"><input name="combinavel" type="checkbox"> Permitir combinar com outras campanhas no carrinho</label>
+          <p>Cada livro recebe apenas o maior percentual entre as campanhas selecionadas. A primeira compra tem prioridade.</p>
+        </fieldset>
+        <section aria-labelledby="previa-titulo">
+          <h3 id="previa-titulo">Prévia dos livros</h3><p id="previa-status" role="status"></p><div id="previa"></div>
+        </section>
+        <p id="erro" role="status"></p>
+        <div class="campanhas-barra"><button id="salvar" type="submit">Salvar campanha</button><button id="fechar" type="button">Fechar</button></div>
+      </form>
+    </dialog>
+    <dialog id="visualizar" aria-labelledby="visualizar-titulo">
+      <h2 id="visualizar-titulo"></h2><p id="visualizar-info"></p><div id="visualizar-livros"></div>
+      <form method="dialog"><button>Fechar</button></form>
+    </dialog>
+  </main>
+  <footer class="academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer>
+</body>
+</html>

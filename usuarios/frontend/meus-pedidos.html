@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BookShop | Meus pedidos</title><link rel="stylesheet" href="./css/shop-base.css"><link rel="stylesheet" href="./css/carrinho.css"><link rel="stylesheet" href="./css/meus-pedidos.css"><script src="./js/api-config.js" defer></script><script src="./js/meus-pedidos.js?v=remover-cancelado" defer></script>  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+  <link rel="stylesheet" href="/css/temas.css?v=original">
+  <script src="/js/tema.js" defer></script>
+</head><body class="cart-page"><header class="cart-header"><div><p class="cart-eyebrow">BOOKSHOP</p><h1>Meus pedidos</h1></div><a class="account-link" href="/vitrine/index.html">Vitrine</a></header><main class="orders-layout">
+  <section class="cart-main orders-content" aria-label="Histórico de pedidos">
+    <p id="orders-status" class="cart-status" role="status" aria-live="polite">Carregando pedidos...</p>
+    <div id="orders-list" class="cart-lines"></div>
+  </section>
+  <aside class="orders-aside" aria-label="Ilustração da BookShop">
+    <img src="./imagens/meuspedidos.jpe" alt="Ilustração de gato preto e livros em tons amarelos">
+  </aside>
+</main>
+<dialog id="order-dialog" class="order-dialog" aria-labelledby="order-dialog-title">
+  <div class="order-dialog-header">
+    <h2 id="order-dialog-title">Detalhes do pedido</h2>
+    <form method="dialog"><button type="submit" autofocus>Fechar</button></form>
+  </div>
+  <div id="order-dialog-content"></div>
+</dialog>  <footer class="academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer>
+<dialog id="cancelamento-dialog" class="order-dialog" aria-labelledby="cancelamento-titulo">
+  <form id="cancelamento-form">
+    <div class="order-dialog-header"><h2 id="cancelamento-titulo">Cancelamento</h2></div>
+    <div class="cancelamento-corpo">
+      <p id="cancelamento-info"></p>
+      <label><span id="cancelamento-motivo-rotulo">Motivo (opcional)</span><textarea name="motivo" rows="3" maxlength="5000"></textarea></label>
+      <label id="cancelamento-anexo">Foto ou vídeo (opcional, até 10 MB)
+        <input name="anexo" type="file" accept="image/jpeg,image/png,video/mp4,video/webm">
+      </label>
+      <p id="cancelamento-retorno" role="status"></p>
+      <button id="cancelamento-enviar" type="submit">Confirmar</button>
+      <button id="cancelamento-fechar" type="button">Voltar</button>
+    </div>
+  </form>
+</dialog>
+</body></html>

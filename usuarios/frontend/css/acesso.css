@@ -1,0 +1,152 @@
+.access-page {
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(201, 166, 70, 0.18), transparent 55%),
+    var(--preto);
+}
+
+.access-header {
+  padding: 2rem 1rem 1.5rem;
+  border-bottom: 1px solid var(--borda);
+  background: var(--preto-secundario);
+  text-align: center;
+}
+
+.access-header p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.access-header .access-brand {
+  color: var(--dourado);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.access-main {
+  width: min(58rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5rem) 0;
+}
+
+.access-intro {
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.access-eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--dourado-claro);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.access-intro h1 {
+  margin: 0;
+  color: var(--creme);
+  font-size: clamp(1.8rem, 5vw, 2.7rem);
+}
+
+.access-intro > p:not(.access-eyebrow) {
+  color: var(--muted);
+}
+
+.access-message {
+  min-height: 1.5rem;
+  color: var(--dourado-claro);
+}
+
+.access-message-warning {
+  color: #f0a49c;
+}
+
+.access-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.access-card {
+  display: flex;
+  min-height: 18rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.4rem, 4vw, 2rem);
+  border: 1px solid var(--borda);
+  border-radius: 0.8rem;
+  background: var(--preto-secundario);
+}
+
+.access-card-staff {
+  background: linear-gradient(145deg, #242016, var(--preto-secundario) 70%);
+}
+
+.access-number {
+  color: var(--dourado);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.access-card h2 {
+  margin: 1rem 0 0.4rem;
+  color: var(--creme);
+  font-size: 1.45rem;
+}
+
+.access-card p {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+}
+
+.access-action {
+  display: inline-flex;
+  min-height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: var(--dourado);
+  color: var(--preto);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.access-action:hover:not(:disabled) {
+  background: var(--dourado-claro);
+}
+
+.access-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.access-action:focus-visible,
+.access-back:focus-visible {
+  outline: 3px solid var(--dourado-claro);
+  outline-offset: 3px;
+}
+
+.access-back {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0;
+  color: var(--dourado-claro);
+}
+
+@media (max-width: 620px) {
+  .access-options {
+    grid-template-columns: 1fr;
+  }
+
+  .access-card {
+    min-height: 15rem;
+  }
+}

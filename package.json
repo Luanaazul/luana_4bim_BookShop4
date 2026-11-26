@@ -1,0 +1,27 @@
+{
+  "name": "bookshop-dw1-4bim",
+  "version": "2.0.0",
+  "description": "BookShop DW1 - vitrine, login com cookies, CRUDs, pedidos e relatórios",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "check": "node backend/scripts/checkSyntax.js",
+    "test": "node --test backend/test/*.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-session": "^2.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.22.3",
+    "multer": "^2.5.0",
+    "nodemailer": "^10.6.1",
+    "pg": "^8.11.5",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

@@ -1,0 +1,36 @@
+﻿.pedidos-main { width: min(100% - 2rem, 74rem); margin: 1.5rem auto; }
+.pedidos-main section { margin-bottom: 2rem; }
+.pedidos-main fieldset { min-width: 0; margin: 0 0 1rem; padding: 1rem; border: 1px solid #c9a64659; border-radius: .4rem; }
+.pedidos-main label { display: grid; gap: .35rem; }
+.pedidos-main input:not([type="checkbox"]), .pedidos-main select, .pedidos-main textarea {
+  min-width: 0; width: 100%; padding: .55rem; border-radius: .3rem; color: #fff; background: var(--bookshop-painel, #191816); border: 1px solid #c9a64680;
+}
+.pedidos-main label:has(> input[type="checkbox"]) { display: flex; align-items: center; }
+.pedidos-main button { padding: .55rem .8rem; border-radius: .3rem; cursor: pointer; }
+.pedidos-main button[aria-pressed="true"] { background: var(--bookshop-amarelo, #d9bd69); color: #171510; }
+.pedidos-main [hidden] { display: none; }
+.pedido-botoes { display: flex; flex-wrap: wrap; gap: .6rem; margin: .7rem 0; }
+.pedido-filtros { margin: .75rem 0; }
+.pedido-item-controls { display: grid; grid-template-columns: minmax(0, 1fr) 6rem auto; gap: .5rem; margin-top: .5rem; }
+#itens-pedido-lista > div { display: grid; grid-template-columns: minmax(0, 1fr) 5rem auto; align-items: center; gap: .6rem; padding: .45rem 0; }
+.pedidos-tabela { overflow-x: auto; }
+.pedidos-tabela table { min-width: 38rem; }
+#pedido-dialog { width: min(42rem, calc(100% - 2rem)); max-height: 86dvh; background: var(--bookshop-painel, #191816); color: #fff; border: 1px solid #c9a64680; border-radius: .55rem; overflow: auto; }
+#pedido-dialog::backdrop { background: #000b; }
+#pedido-dialog header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+#pedido-dialog-corpo form { display: grid; gap: .65rem; margin-top: 1rem; }
+@media (max-width: 600px) {
+  .pedidos-main .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .pedido-item-controls { grid-template-columns: minmax(0, 1fr) 5rem; }
+  .pedido-item-controls button { grid-column: 1 / -1; }
+}
+
+.pedido-produto { display: flex; align-items: center; gap: .8rem; margin-block: .4rem; }
+.pedido-produto img { width: 48px; height: 68px; object-fit: contain; }
+
+.avisos-dialog { width: min(42rem, calc(100% - 2rem)); max-height: 85dvh; border: 1px solid var(--borda); border-radius: .55rem; color: var(--branco); background: var(--preto-secundario); }
+.avisos-dialog::backdrop { background: #171123bf; }
+.avisos-dialog header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem; }
+.aviso-pedido { border-top: 1px solid var(--borda); padding-block: .9rem; overflow-wrap: anywhere; }
+.aviso-pedido label { margin-block: .75rem; }
+.aviso-pedido button { margin-right: .5rem; }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c9a646">
+  <title>BookShop | Escolher acesso</title>
+  <link rel="stylesheet" href="../css/shop-base.css">
+  <link rel="stylesheet" href="../css/acesso.css">
+  <script src="../js/api-config.js" defer></script>
+  <script src="../js/escolher-acesso.js" defer></script>
+  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+  <link rel="stylesheet" href="/css/temas.css">
+  <script src="/js/tema.js" defer></script>
+</head>
+<body class="access-page">
+  <header class="access-header">
+    <p class="access-brand">BOOKSHOP</p>
+    <p>Uma conta, dois modos de navegar</p>
+  </header>
+  <main class="access-main">
+    <section class="access-intro" aria-labelledby="access-title">
+      <p class="access-eyebrow">ACESSO</p>
+      <h1 id="access-title">Como deseja acessar a BookShop?</h1>
+      <p id="access-greeting">Verificando seu cadastro...</p>
+      <p id="access-message" class="access-message" role="status" aria-live="polite"></p>
+    </section>
+    <div class="access-options">
+      <article class="access-card access-card-store">
+        <span class="access-number" aria-hidden="true">01</span>
+        <h2>Entrar como cliente</h2>
+        <p>Explore os livros, use seu carrinho e acompanhe suas compras.</p>
+        <a id="client-mode" class="access-action" href="/acesso/cliente">Acessar a vitrine</a>
+      </article>
+      <article class="access-card access-card-staff">
+        <span class="access-number" aria-hidden="true">02</span>
+        <h2>Entrar como funcionário</h2>
+        <p id="staff-description">Acesse o painel correspondente ao seu cargo.</p>
+        <button id="staff-mode" class="access-action" type="button" disabled>
+          Verificando cargo...
+        </button>
+      </article>
+    </div>
+    <a class="access-back" href="/vitrine/index.html">Continuar na vitrine</a>
+  </main>
+  <footer class="academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer>
+</body>
+</html>

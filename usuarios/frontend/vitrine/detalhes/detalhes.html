@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do livro | BookShop</title>
+  <link rel="stylesheet" href="../../css/shop-base.css">
+  <link rel="stylesheet" href="detalhes.css">
+  <script src="../../js/api-config.js" defer></script>
+  <script src="../../js/carrinho-store.js" defer></script>
+  <script src="detalhes.js" defer></script>
+  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+  <link rel="stylesheet" href="/css/temas.css">
+  <script src="/js/tema.js" defer></script>
+</head>
+<body>
+  <header class="storefront-header">
+    <a class="storefront-brand" href="/vitrine/index.html" aria-label="BookShop, voltar à vitrine">
+      <h1>BOOKSHOP</h1>
+      <p>Livros para a sua próxima leitura</p>
+    </a>
+    <nav class="shop-actions" aria-label="Navegação da livraria">
+      <div id="account-area" class="account-area" aria-live="polite">
+        <a class="account-link" href="/login/login.html">
+          <span class="person-icon" aria-hidden="true"></span>
+          <span>Entrar</span>
+        </a>
+      </div>
+      <a class="cart-link" href="/carrinho/carrinho.html">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 1.9-1.4L21 8H6"></path>
+          <circle cx="10" cy="20" r="1.2"></circle>
+          <circle cx="18" cy="20" r="1.2"></circle>
+        </svg>
+        <span>Carrinho</span>
+
+      </a>
+    </nav>
+  </header>
+  <main class="details-page">
+    <a id="back-to-store" class="back-link" href="/vitrine/index.html">← Voltar à vitrine</a>
+    <p id="details-status" class="details-status" role="status" aria-live="polite">
+      Carregando detalhes do livro...
+    </p>
+    <article id="book-details" class="book-details" aria-labelledby="details-title" hidden>
+      <div class="details-cover">
+        <img id="details-cover-image" alt="" hidden>
+        <p id="details-cover-placeholder" class="cover-placeholder">Capa indisponível</p>
+      </div>
+      <div class="details-information">
+        <h1 id="details-title"></h1>
+        <p id="details-author" class="details-author"></p>
+        <dl class="book-metadata">
+          <div id="genre-field">
+            <dt>Género</dt>
+            <dd id="details-genre"></dd>
+          </div>
+          <div id="pages-field">
+            <dt>Número de páginas</dt>
+            <dd id="details-pages"></dd>
+          </div>
+          <div id="publisher-field">
+            <dt>Editora</dt>
+            <dd id="details-publisher"></dd>
+          </div>
+          <div id="year-field">
+            <dt>Ano de publicação</dt>
+            <dd id="details-year"></dd>
+          </div>
+        </dl>
+        <section id="synopsis-field" class="synopsis-section" aria-labelledby="synopsis-title">
+          <h2 id="synopsis-title">Sinopse</h2>
+          <p id="details-synopsis"></p>
+        </section>
+        <p id="details-price" class="details-price"></p>
+        <button id="add-to-cart" class="add-to-cart-button" type="button" disabled>
+          Adicionar ao carrinho
+        </button>
+        <p id="cart-status" class="cart-status" role="status" aria-live="polite"></p>
+      </div>
+    </article>
+  </main>
+  <footer class="academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer>
+</body>
+</html>

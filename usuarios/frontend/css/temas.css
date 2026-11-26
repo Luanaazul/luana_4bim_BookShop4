@@ -1,0 +1,102 @@
+﻿:root[data-tema="azul-laranja"] {
+  --bookshop-fundo: #12253b;
+  --bookshop-painel: #1b304a;
+  --bookshop-cabecalho: #18324e;
+  --bookshop-campo: #102236;
+  --bookshop-amarelo: #f59f59;
+  --bookshop-amarelo-hover: #ffbf83;
+  --bookshop-texto: #f8f5ef;
+  --bookshop-texto-suave: #c1d4e7;
+  --bookshop-borda: #ed9e626b;
+  --tema-arte: sepia(.65) hue-rotate(153deg) saturate(1.4);
+}
+:root[data-tema="preto-vermelho"] {
+  --bookshop-fundo: #0e090b;
+  --bookshop-painel: #231016;
+  --bookshop-cabecalho: #400e21;
+  --bookshop-campo: #180b10;
+  --bookshop-amarelo: #d9818f;
+  --bookshop-amarelo-hover: #f4b6be;
+  --bookshop-texto: #fff2ef;
+  --bookshop-texto-suave: #dfbec6;
+  --bookshop-borda: #901e3b;
+  --tema-arte: sepia(.75) hue-rotate(317deg) saturate(1.45);
+}
+:root[data-tema="preto-amarelo"] {
+  --bookshop-fundo: #11100e;
+  --bookshop-painel: #1a1917;
+  --bookshop-cabecalho: #1a1917;
+  --bookshop-campo: #0b0b0a;
+  --bookshop-amarelo: #c9a646;
+  --bookshop-amarelo-hover: #e0c56e;
+  --bookshop-texto: #f5f1e8;
+  --bookshop-texto-suave: #b8af9d;
+  --bookshop-borda: rgba(201, 166, 70, .4);
+  --tema-arte: none;
+}
+:root[data-tema]:not([data-tema="padrao"]) body { background: var(--bookshop-fundo); }
+:root[data-tema]:not([data-tema="padrao"]) .storefront-page .book-card,
+:root[data-tema]:not([data-tema="padrao"]) .filter-panel { background: var(--bookshop-painel); }
+:root[data-tema]:not([data-tema="padrao"]) .storefront-page :is(.storefront-heading h2, .storefront-heading p, .genre-section-heading h3, .storefront-status:not(.error)) {
+  color: var(--bookshop-amarelo-hover);
+}
+:root[data-tema]:not([data-tema="padrao"]) .manager-nav {
+  --nav-amarelo: var(--bookshop-amarelo);
+  --nav-amarelo-realce: var(--bookshop-amarelo-hover);
+  --nav-roxo: var(--bookshop-campo);
+}
+:root[data-tema]:not([data-tema="padrao"]) .manager-home .site-header {
+  background: linear-gradient(var(--bookshop-cabecalho), var(--bookshop-painel));
+}
+:root[data-tema]:not([data-tema="padrao"]) .manager-home :is(.site-footer, .manager-session) {
+  background: var(--bookshop-fundo);
+  color: var(--bookshop-texto);
+}
+:root[data-tema]:not([data-tema="padrao"]) .manager-home .logout-button {
+  background: var(--bookshop-amarelo);
+  color: var(--bookshop-campo);
+}
+.theme-logo {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: var(--tema-arte, none);
+}
+.storefront-brand:has(.theme-logo) { display: flex; align-items: center; flex-wrap: wrap; gap: .45rem .65rem; }
+.storefront-brand:has(.theme-logo) p { flex-basis: 100%; }
+.orders-aside img { filter: var(--tema-arte, none) drop-shadow(0 .6rem 1rem #0008); }
+
+
+:root:not([data-tema="preto-amarelo"]) .orders-layout { grid-template-columns: minmax(0, 1fr); }
+:root:not([data-tema="preto-amarelo"]) .orders-aside { display: none; }
+:root[data-tema="preto-amarelo"] .storefront-header { background: #c9a646; }
+:root[data-tema="preto-amarelo"] .storefront-header :is(.storefront-brand h1, .storefront-brand p, .account-link, .cart-link) {
+  color: #11100e;
+  border-color: #241d0b;
+}
+:root[data-tema="preto-amarelo"] .storefront-page .book-card { background: linear-gradient(145deg, #141514, #101110); }
+:root[data-tema="preto-vermelho"] :is(.storefront-header .storefront-brand h1, .site-title) {
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+  color: #ffced4;
+  text-shadow: 0 2px 10px #12060b;
+}
+:root[data-tema="preto-vermelho"] :is(.nav-link, .menu-link, button) { text-shadow: none; }
+
+:root[data-tema="preto-vermelho"] .storefront-header {
+  background: linear-gradient(115deg, #120b0f 8%, #400e21 65%, #591125 100%);
+}
+:root[data-tema="preto-vermelho"] .storefront-page .book-card {
+  background: linear-gradient(150deg, #2e131c, #170d11 72%);
+}
+:root[data-tema="preto-vermelho"] .storefront-page .book-card h3 {
+  color: var(--bookshop-texto);
+}
+:root[data-tema="preto-vermelho"] :is(.storefront-page .book-card-actions button:not(.details-button), .cart-summary button) {
+  background: #891c35;
+  color: #fff4f3;
+}
+:root[data-tema="preto-vermelho"] :is(.storefront-page .book-card-actions button:not(.details-button), .cart-summary button):hover:not(:disabled) {
+  background: #a12341;
+  color: #fff4f3;
+}

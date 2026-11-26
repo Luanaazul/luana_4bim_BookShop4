@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BookShop | Meu perfil</title>
+  <link rel="stylesheet" href="/css/shop-base.css">
+  <link rel="stylesheet" href="/css/carrinho.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+  <link rel="stylesheet" href="/css/temas.css">
+  <link rel="stylesheet" href="/css/perfil.css">
+  <link rel="stylesheet" href="/css/identificacao.css">
+  <script src="/js/tema.js" defer></script>
+  <script src="/js/perfil.js" defer></script>
+</head>
+<body>
+  <header class="cart-header">
+    <div><img class="theme-logo" src="/imagens/logoGato.jpeg" alt=""><h1>Meu perfil</h1></div>
+    <a class="account-link" href="/vitrine/index.html">Voltar à vitrine</a>
+  </header>
+  <main class="perfil">
+    <p id="perfil-status" role="status" aria-live="polite"></p>
+    <section class="perfil-card">
+      <div class="perfil-identidade">
+        <img id="avatar" src="/imagens/logoGato.jpeg" alt="Foto de perfil" width="96" height="96">
+        <div><h2 id="perfil-nome">Minha conta</h2><p id="perfil-usuario"></p></div>
+      </div>
+      <form id="perfil-foto" enctype="multipart/form-data">
+        <label>Foto de perfil <input name="foto" type="file" accept="image/jpeg,image/png,image/webp" required></label>
+        <div class="perfil-acoes"><button>Salvar foto</button><button id="remover-foto" type="button" hidden>Remover foto</button></div>
+      </form>
+    </section>
+    <section class="perfil-card">
+      <h2>Minhas compras</h2>
+      <dl class="perfil-compras">
+        <div><dt>Livros comprados</dt><dd id="perfil-livros">—</dd></div>
+        <div><dt>Total em compras</dt><dd id="perfil-total">—</dd></div>
+      </dl>
+      <a href="/meus-pedidos.html">Ver meus pedidos</a>
+    </section>
+    <section class="perfil-card" id="tema">
+      <h2>Tema</h2>
+      <form id="perfil-tema">
+        <label>Paleta <select name="tema">
+          <option value="padrao">Roxo e amarelo (padrão)</option>
+          <option value="azul-laranja">Azul e laranja</option>
+          <option value="preto-vermelho">Preto e vermelho</option>
+          <option value="preto-amarelo">Original (preto e amarelo)</option>
+        </select></label>
+        <button>Salvar tema</button>
+      </form>
+    </section>
+  </main>
+  <footer class="academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c9a646">
+  <title>BookShop | Entrar</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="../js/api-config.js" defer></script>
+  <script src="../js/login.js" defer></script>
+  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <section class="login-card" aria-labelledby="login-title">
+      <div class="avatar-placeholder">
+        <img src="../imagens/logoGato.jpeg" alt="Logo BookShop">
+      </div>
+      <p class="brand">BOOKSHOP</p>
+      <h1 id="login-title">Bem-vindo de volta</h1>
+      <p class="intro">Entre para continuar explorando sua próxima leitura.</p>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="nome_usuario_pessoa">Nome de Usuário</label>
+          <input
+            id="nome_usuario_pessoa"
+            name="nome_usuario_pessoa"
+            type="text"
+            autocomplete="username"
+            maxlength="50"
+            required
+          >
+        </div>
+        <div class="field">
+          <label for="senha">Senha</label>
+          <input
+            id="senha"
+            name="senha"
+            type="password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+        <p id="login-message" class="message" role="status" aria-live="polite"></p>
+        <button id="login-submit" type="submit">Entrar</button>
+      </form>
+
+      <nav class="auth-links" aria-label="Ajuda para entrar">
+        <a href="/cadastro.html">Cadastrar</a>
+        <a href="./recuperar-senha.html">Esqueci minha senha</a>
+        <a href="/vitrine/index.html">Voltar à vitrine</a>
+      </nav>
+    </section>
+  </main>
+  <footer class="academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer>
+<dialog class="welcome-discount" id="welcome-discount" aria-labelledby="welcome-discount-title">
+    <h2 id="welcome-discount-title">Desconto de primeira compra!! Seja bem-vindo e aproveite 50%!!</h2>
+    <form method="dialog"><button>Continuar</button></form>
+  </dialog>
+</body>
+</html>

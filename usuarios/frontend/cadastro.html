@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BookShop | Criar conta</title><link rel="stylesheet" href="./css/login.css"><script src="./js/api-config.js" defer></script><script src="./js/cadastro.js" defer></script>  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+</head>
+<body><main class="auth-shell"><section class="login-card" aria-labelledby="signup-title"><p class="brand">BOOKSHOP</p><h1 id="signup-title">Criar conta</h1><p class="intro">Cadastre-se para finalizar suas compras e acompanhar seus pedidos.</p>
+<form id="signup-form">
+<div class="field"><label for="nome_pessoa">Nome completo</label><input id="nome_pessoa" name="nome_pessoa" required maxlength="100" autocomplete="name"></div>
+<div class="field"><label for="cpf_pessoa">CPF</label><input id="cpf_pessoa" name="cpf_pessoa" required placeholder="000.000.000-00" autocomplete="off" maxlength="14" inputmode="numeric"></div>
+<div class="field"><label for="data_nascimento_pessoa">Data de nascimento</label><input id="data_nascimento_pessoa" name="data_nascimento_pessoa" type="date" required></div>
+<div class="field"><label for="email_pessoa">E-mail</label><input id="email_pessoa" name="email_pessoa" type="email" required maxlength="150" autocomplete="email"></div>
+<div class="field"><label for="nome_usuario_pessoa">Nome de usuário</label><input id="nome_usuario_pessoa" name="nome_usuario_pessoa" required maxlength="50" autocomplete="username"></div>
+<div class="field"><label for="senha_pessoa">Senha (8 a 72 bytes)</label><input id="senha_pessoa" name="senha_pessoa" type="password" maxlength="72" required autocomplete="new-password"></div>
+<div class="field"><label for="confirmacao_senha">Confirme a senha</label><input id="confirmacao_senha" name="confirmacao_senha" type="password" maxlength="72" required autocomplete="new-password"></div>
+<p id="signup-message" class="message" role="status" aria-live="polite"></p><button id="signup-submit" type="submit">Criar conta</button></form>
+<nav class="auth-links" aria-label="Navegação"><a href="/login/login.html">Já tenho conta</a><a href="/vitrine/index.html">Voltar à vitrine</a></nav></section></main>  <footer class="academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer>
+</body></html>

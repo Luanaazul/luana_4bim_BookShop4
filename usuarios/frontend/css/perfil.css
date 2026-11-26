@@ -1,0 +1,20 @@
+﻿.perfil {
+  width: min(48rem, calc(100% - 2rem));
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem auto;
+}
+.perfil-card {
+  background: var(--bookshop-painel);
+  border: 1px solid var(--bookshop-borda);
+  border-radius: .75rem;
+  padding: clamp(1rem, 4vw, 1.5rem);
+}
+.perfil-card h2 { margin: 0 0 .75rem; }
+.perfil-identidade, .perfil-acoes { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+.perfil-identidade { margin-bottom: 1rem; }
+#avatar { border-radius: 50%; object-fit: cover; }
+.perfil-card label { display: grid; gap: .35rem; margin-bottom: .65rem; }
+.perfil-card input, .perfil-card select { max-width: 100%; padding: .5rem; }
+.perfil-compras { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 1rem; }
+.perfil-compras dd { margin: 0; font-size: 1.35rem; color: var(--bookshop-amarelo-hover); }

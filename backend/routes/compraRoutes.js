@@ -1,0 +1,12 @@
+const express = require('express');
+const controller = require('../controllers/compraController');
+const requireAuth = require('../middleware/requireAuth');
+const requireManager = require('../middleware/requireManager');
+const { bookfriday } = require('../controllers/promocaoController');
+const router = express.Router();
+router.route('/bookfriday').all(requireAuth, requireManager).get(bookfriday).put(bookfriday);
+router.post('/cotacao', requireAuth, controller.cotacaoCompra);
+router.post('/preparar', requireAuth, controller.prepararCompra);
+router.post('/:id/confirmar', requireAuth, controller.confirmarCompra);
+router.post('/:id/confirmar-pagamento', requireAuth, requireManager, (req, res) => controller.confirmarCompra(req, res, true));
+module.exports = router;

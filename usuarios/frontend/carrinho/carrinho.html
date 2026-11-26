@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookShop | Carrinho</title>
+  <link rel="stylesheet" href="../css/shop-base.css">
+  <link rel="stylesheet" href="../css/carrinho.css">
+  <script src="../js/api-config.js" defer></script>
+  <script src="../js/carrinho-store.js?v=campanhas" defer></script>
+  <script src="../js/carrinho.js?v=campanhas" defer></script>
+  <link rel="stylesheet" href="/css/identificacao.css">
+  <link rel="stylesheet" href="/css/paleta-roxa.css">
+  <link rel="stylesheet" href="/css/temas.css">
+  <script src="/js/tema.js" defer></script>
+</head>
+<body class="cart-page">
+  <header class="cart-header">
+    <div>
+      <p class="cart-eyebrow">BOOKSHOP</p>
+      <h1>Seu carrinho</h1>
+    </div>
+    <div id="account-area" class="account-area" aria-live="polite">
+      <a class="account-link" href="/login/login.html">
+        <span class="person-icon" aria-hidden="true"></span>
+        <span>Entre ou cadastre-se</span>
+      </a>
+    </div>
+  </header>
+
+  <nav aria-label="Navegação principal">
+    <ul>
+      <li><a href="/vitrine/index.html">Vitrine</a></li>
+      <li id="cart-login-nav"><a href="/login/login.html">Entrar</a></li>
+      <li><a id="my-orders-link" href="/meus-pedidos.html">Meus pedidos</a></li>
+      <li><a href="/carrinho/carrinho.html">Carrinho</a></li>
+    </ul>
+  </nav>
+
+  <main class="cart-main">
+    <p id="cart-status" class="cart-status" role="status" aria-live="polite"></p>
+    <div class="cart-products">
+      <h2>Produtos no carrinho</h2>
+      <div id="cart-lines" class="cart-lines"></div>
+      <section class="cart-summary cart-discounts" aria-labelledby="cart-discounts-title">
+        <h2 id="cart-discounts-title">Descontos disponíveis</h2>
+        <div id="cart-discounts" aria-live="polite"></div>
+      </section>
+    </div>
+    <section class="cart-summary" aria-labelledby="cart-summary-title">
+      <h2 id="cart-summary-title">Resumo do pedido</h2>
+      <p>Subtotal <strong id="cart-subtotal">R$ 0,00</strong></p>
+      <p>Primeira compra <strong id="cart-first-discount">R$ 0,00</strong></p>
+      <p>Outros descontos <strong id="cart-other-discount">R$ 0,00</strong></p>
+      <p>Valor economizado <strong id="cart-savings">R$ 0,00</strong></p>
+      <p>Frete estimado <strong id="cart-shipping">R$ 0,00</strong></p>
+      <p class="cart-total">Total final <strong id="cart-total">R$ 0,00</strong></p>
+      <p id="checkout-status" class="checkout-status" role="status" aria-live="polite"></p>
+      <button id="checkout-button" type="button">Finalizar compra</button>
+      <a class="continue-shopping" href="/vitrine/index.html">Continuar comprando</a>
+    </section>
+  </main>
+  <footer class="academic-footer"><p>Luana Cazarin de Almeida · Turma M32 · 2026</p></footer>
+</body>
+</html>

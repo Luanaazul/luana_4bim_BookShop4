@@ -1,0 +1,14 @@
+const express = require('express');
+const controller = require('../controllers/loginController');
+const requireAuth = require('../middleware/requireAuth');
+const router = express.Router();
+const recuperacao = require('../controllers/recuperacaoSenhaController');
+router.post('/login', controller.limitarTentativasLogin, controller.login);
+router.get('/login/sessao', controller.sessao);
+router.get('/acesso/cliente', requireAuth, controller.acessarCliente);
+router.get('/acesso/funcionario', requireAuth, controller.acessarFuncionario);
+router.post('/logout', controller.logout);
+router.post('/cadastro', controller.cadastrarCliente);
+router.post('/recuperar-senha', recuperacao.solicitar);
+router.post('/redefinir-senha', recuperacao.redefinir);
+module.exports = router;

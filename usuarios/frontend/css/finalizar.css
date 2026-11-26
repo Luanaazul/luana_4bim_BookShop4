@@ -1,0 +1,118 @@
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(201, 166, 70, 0.25);
+  color: var(--bookshop-texto, #f2e7cc);
+  font-size: 1.1rem;
+}
+
+.checkout-total strong {
+  color: var(--bookshop-amarelo-hover, #e0c56e);
+}
+
+.checkout-notice {
+  padding: 0.75rem;
+  border-left: 3px solid var(--bookshop-amarelo, #c9a646);
+  background: rgba(201, 166, 70, 0.08);
+  color: var(--bookshop-texto, #f2e7cc);
+  font-size: 0.9rem;
+}
+
+#payment-form fieldset {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0 0 1rem;
+  padding: 0.8rem;
+  border: 1px solid rgba(201, 166, 70, 0.4);
+  border-radius: 0.35rem;
+}
+
+#payment-form legend {
+  padding: 0 0.35rem;
+  color: var(--bookshop-amarelo-hover, #e0c56e);
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.payment-option input {
+  width: auto;
+  min-height: auto;
+  accent-color: var(--bookshop-amarelo, #c9a646);
+}
+
+.payment-panel {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(201, 166, 70, 0.25);
+}
+
+.payment-panel h3 {
+  color: var(--bookshop-amarelo-hover, #e0c56e);
+}
+
+.payment-panel label {
+  display: block;
+  margin: 0.7rem 0 0.3rem;
+  color: var(--bookshop-texto, #f2e7cc);
+}
+
+.payment-panel input,
+.payment-panel select,
+.payment-panel textarea {
+  width: 100%;
+  min-height: 2.7rem;
+  padding: 0.6rem;
+  border: 1px solid rgba(201, 166, 70, 0.4);
+  border-radius: 0.3rem;
+  background: var(--bookshop-fundo, #0b0b0a);
+  color: var(--bookshop-texto, #f5f1e8);
+  font: inherit;
+}
+
+.payment-panel textarea {
+  resize: vertical;
+  overflow-wrap: anywhere;
+}
+
+.card-fields-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.pix-panel {
+  text-align: center;
+}
+
+.pix-panel label {
+  text-align: left;
+}
+
+#pix-qr {
+  display: block;
+  width: min(16rem, 100%);
+  margin: 1rem auto;
+  padding: 0.5rem;
+  border-radius: 0.35rem;
+  background: #fff;
+}
+
+#pix-code {
+  text-align: left;
+}
+
+#copy-pix {
+  margin-top: 0.7rem;
+}
+
+@media (max-width: 680px) {
+  .card-fields-row {
+    grid-template-columns: 1fr;
+  }
+}

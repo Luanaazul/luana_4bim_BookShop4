@@ -1,0 +1,199 @@
+:root {
+  color-scheme: dark;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--bookshop-texto, #f5f1e8);
+  background: var(--bookshop-fundo, #11100e);
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.auth-shell {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  overflow: hidden;
+  padding: 4rem 1.25rem;
+  background: linear-gradient(var(--bookshop-amarelo, #c9a646) 0 46%, var(--bookshop-fundo, #11100e) 46% 100%);
+}
+
+.auth-shell::before {
+  position: absolute;
+  top: calc(46% - 3.5rem);
+  left: -10%;
+  width: 120%;
+  height: 7rem;
+  border-radius: 50%;
+  background: var(--bookshop-fundo, #11100e);
+  content: "";
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 28rem);
+  padding: 2.5rem clamp(1.4rem, 7vw, 3rem) 2rem;
+  border: 1px solid rgba(224, 197, 110, 0.38);
+  border-radius: 1.25rem;
+  background: var(--bookshop-painel, #1a1917);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.avatar-placeholder {
+  width: 5.5rem;
+  aspect-ratio: 1;
+  margin: -5rem auto 1rem;
+  border: 3px solid var(--bookshop-painel, #1a1917);
+  border-radius: 50%;
+  background: var(--bookshop-texto, #f2e7cc);
+  box-shadow: 0 0 0 1px #c9a646;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.avatar-placeholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand {
+  margin: 0;
+  color: var(--bookshop-amarelo-hover, #e0c56e);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+h1 {
+  margin: 0.6rem 0;
+  font-size: clamp(1.65rem, 6vw, 2rem);
+}
+
+.intro {
+  margin: 0 0 1.8rem;
+  color: var(--bookshop-texto-suave, #b8af9d);
+  line-height: 1.5;
+}
+
+.field {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--bookshop-texto, #f2e7cc);
+  font-size: 0.95rem;
+}
+
+input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(201, 166, 70, 0.45);
+  border-radius: 0.5rem;
+  background: var(--bookshop-fundo, #11100e);
+  color: var(--bookshop-texto, #f5f1e8);
+  font: inherit;
+}
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #e0c56e;
+  outline-offset: 3px;
+}
+
+button {
+  width: 100%;
+  min-height: 3rem;
+  margin-top: 0.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--bookshop-amarelo, #c9a646);
+  color: var(--bookshop-campo, #11100e);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+button:hover:not(:disabled) {
+  background: var(--bookshop-amarelo-hover, #e0c56e);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.message {
+  min-height: 1.5rem;
+  margin: 0.8rem 0 0;
+  color: var(--bookshop-amarelo-hover, #e0c56e);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.message.error {
+  color: #f0a49c;
+}
+
+.auth-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-top: 1.4rem;
+}
+
+.auth-links a {
+  color: var(--bookshop-amarelo-hover, #e0c56e);
+  font-size: 0.9rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2rem;
+}
+
+@media (max-width: 480px) {
+  .auth-shell {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .login-card {
+    padding-top: 2rem;
+  }
+
+  .avatar-placeholder {
+    margin-top: -4.5rem;
+  }
+
+  .auth-links {
+    flex-direction: column;
+  }
+}
+
+.welcome-discount {
+  width: min(26rem, calc(100% - 2rem));
+  box-sizing: border-box;
+  padding: clamp(1.2rem, 5vw, 2.2rem);
+  text-align: center;
+  border: 1px solid var(--bookshop-amarelo, #c9a646);
+  border-radius: .8rem;
+  background: var(--bookshop-painel, #1a1917);
+  color: var(--bookshop-amarelo-hover, #e0c56e);
+}
+.welcome-discount::backdrop { background: #181123c9; }
+.welcome-discount h2 { margin: 0 0 1.1rem; line-height: 1.3; }
+.welcome-discount button { padding: .55rem 1.15rem; border-radius: .35rem; }
